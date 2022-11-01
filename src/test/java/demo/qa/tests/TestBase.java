@@ -23,7 +23,7 @@ public class TestBase {
         String browserName = System.getProperty("browser", "chrome");
         String browserVersion = System.getProperty("browserVersion", "100");
         String browserSize = System.getProperty("browserSize",  "1920x1080");
-        String remoteUrl = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        String remoteUrl = System.getProperty("remote");
 //        String remoteUrl = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         Configuration.browser = browserName;
