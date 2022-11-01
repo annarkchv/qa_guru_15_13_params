@@ -14,13 +14,13 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
-//    Screenshot
+    //    Screenshot
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-//    Page source
+    //    Page source
     @Attachment(value = "Page source", type = "text/plain")
     public static byte[] pageSource() {
         return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
@@ -31,7 +31,7 @@ public class Attach {
         return message;
     }
 
-//    Console logs
+    //    Console logs
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",
@@ -39,7 +39,7 @@ public class Attach {
         );
     }
 
-//    Video
+    //    Video
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
@@ -58,7 +58,7 @@ public class Attach {
         return null;
     }
 
-    public static String getSessionId(){
+    public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 }

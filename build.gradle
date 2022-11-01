@@ -43,14 +43,14 @@ tasks.withType(Test) {
     }
 }
 
-task full_test(type: Test) {
+task fullDataFormTest(type: Test) {
     useJUnitPlatform {
-        includeTags "full_test"
+        includeTags "fullDataFormTest"
     }
 }
 
-task minimum_data_test(type: Test) {
+task minimumDataFormTest(type: Test) {
     useJUnitPlatform {
-        includeTags "minimum_data_test"
+        includeTags "minimumDataFormTest"
     }
 }

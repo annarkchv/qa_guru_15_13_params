@@ -7,26 +7,26 @@ import org.junit.jupiter.api.Test;
 import static demo.qa.tests.TestData.*;
 import static io.qameta.allure.Allure.step;
 
-public class PracticeFormWithPageObjectsTest extends TestBase{
+public class PracticeFormWithPageObjectsTest extends TestBase {
 
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
     @Test
-    @Tag("full_test")
+    @Tag("fullDataFormTest")
     void fillFormFullTest() {
         step("Fill form (all fields)", () -> {
-                    practiceFormPage.openPage()
-                            .setName(firstUserFirstName, firstUserLastName)
-                            .setMail(firstUserMail)
-                            .setGender(firstUserGender)
-                            .setNumber(firstUserNumber)
-                            .setBirthDate(firstUserDayOfMonth, firstUserMonth, firstUserYear)
-                            .setSubject(firstUserSubject)
-                            .setHobby(firstUserHobby)
-                            .uploadFile(userFile)
-                            .setCurrentAddress(firstUserAddress)
-                            .setStateAndCity(firstUserState, firstUserCity)
-                            .submitForm();
+            practiceFormPage.openPage()
+                    .setName(firstUserFirstName, firstUserLastName)
+                    .setMail(firstUserMail)
+                    .setGender(firstUserGender)
+                    .setNumber(firstUserNumber)
+                    .setBirthDate(firstUserDayOfMonth, firstUserMonth, firstUserYear)
+                    .setSubject(firstUserSubject)
+                    .setHobby(firstUserHobby)
+                    .uploadFile(userFile)
+                    .setCurrentAddress(firstUserAddress)
+                    .setStateAndCity(firstUserState, firstUserCity)
+                    .submitForm();
         });
 
         step("Check modal dialog (all fields)", () -> {
@@ -45,14 +45,14 @@ public class PracticeFormWithPageObjectsTest extends TestBase{
     }
 
     @Test
-    @Tag("minimum_data_test")
+    @Tag("minimumDataFormTest")
     void fillFormWithMinimumDataTest() {
         step("Fill form (minimum data)", () -> {
-                    practiceFormPage.openPage()
-                            .setName(secondUserFirstName, secondUserLastName)
-                            .setGender(secondUserGender)
-                            .setNumber(secondUserNumber)
-                            .submitForm();
+            practiceFormPage.openPage()
+                    .setName(secondUserFirstName, secondUserLastName)
+                    .setGender(secondUserGender)
+                    .setNumber(secondUserNumber)
+                    .submitForm();
         });
 
         step("Check modal dialog (minimum data)", () -> {

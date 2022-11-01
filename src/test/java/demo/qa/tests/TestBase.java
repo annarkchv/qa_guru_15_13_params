@@ -20,11 +20,16 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
 
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "100");
-        Configuration.browserSize = System.getProperty("browserSize",  "1520x900");
-        if(System.getProperty("remote") != null ){
-            Configuration.remote = System.getProperty("remote");
+        String browser = System.getProperty("browser", "chrome");
+        String browserVersion = System.getProperty("browserVersion", "100");
+        String browserSize = System.getProperty("browserSize", "1520x900");
+        String remote = System.getProperty("remote");
+
+        Configuration.browser = browser;
+        Configuration.browserVersion = browserVersion;
+        Configuration.browserSize = browserSize;
+        if (remote != null) {
+            Configuration.remote = remote;
         }
     }
 
