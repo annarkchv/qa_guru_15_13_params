@@ -24,13 +24,15 @@ allure {
 dependencies {
     testImplementation(
             'org.junit.jupiter:junit-jupiter:5.9.0',
-            'com.codeborne:selenide:6.8.1',
+            'com.codeborne:selenide:6.9.0',
             'io.qameta.allure:allure-selenide:2.19.0',
-            'com.github.javafaker:javafaker:1.0.2'
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.slf4j:slf4j-simple:2.0.3'
     )
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -38,5 +40,17 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task full_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "full_test"
+    }
+}
+
+task minimum_data_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "minimum_data_test"
     }
 }

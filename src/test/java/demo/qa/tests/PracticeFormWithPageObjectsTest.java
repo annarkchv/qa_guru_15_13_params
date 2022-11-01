@@ -1,6 +1,7 @@
 package demo.qa.tests;
 
 import demo.qa.pages.PracticeFormPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static demo.qa.tests.TestData.*;
@@ -10,10 +11,9 @@ public class PracticeFormWithPageObjectsTest extends TestBase{
 
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
-//    Cloned repository
     @Test
-    void fillFormTest() {
-
+    @Tag("full_test")
+    void fillFormFullTest() {
         step("Fill form (all fields)", () -> {
                     practiceFormPage.openPage()
                             .setName(firstUserFirstName, firstUserLastName)
@@ -45,8 +45,8 @@ public class PracticeFormWithPageObjectsTest extends TestBase{
     }
 
     @Test
+    @Tag("minimum_data_test")
     void fillFormWithMinimumDataTest() {
-
         step("Fill form (minimum data)", () -> {
                     practiceFormPage.openPage()
                             .setName(secondUserFirstName, secondUserLastName)
