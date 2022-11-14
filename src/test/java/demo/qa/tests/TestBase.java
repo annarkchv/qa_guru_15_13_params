@@ -23,13 +23,13 @@ public class TestBase {
         String browser = System.getProperty("browser", "chrome");
         String browserVersion = System.getProperty("browserVersion", "100");
         String browserSize = System.getProperty("browserSize", "1520x900");
-        String remote = System.getProperty("remote");
+        String remoteUrl = System.getProperty("remoteUrl", "");
 
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
         Configuration.browserSize = browserSize;
-        if (remote != null) {
-            Configuration.remote = remote;
+        if (remoteUrl != null) {
+            Configuration.remote = remoteUrl;
         }
     }
 

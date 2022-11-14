@@ -99,7 +99,7 @@ public class PracticeFormPage {
 
     }
 
-//    Actions, check results
+    //    Actions, check results
     public PracticeFormPage checkTableAppearance() {
         afterRegistrationComponent.checkTableAppearance();
         return this;
